@@ -92,7 +92,7 @@ The cosine similarity function gives score for each cuisine with respect to the 
 > cosine_score = cosine_similarity(Input_matrix, X)
 
 The cosine scores are added to the data frame and sorted to get the higest scored cuisines.
-> dataframe['Cuisine_score'] = Cuisine_score
+> dataframe['Cuisine_score'] = Cuisine_score \
 > DataFrame = dataframe.sort_values(by ='Cuisine_score',ascending=False) \
 > Nearest_cuisine = DataFrame[['id', 'Cuisine_score']].head(Kneighbors)
 
