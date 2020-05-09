@@ -160,9 +160,7 @@ clone the project directory using below command
 > git clone  https://github.com/PurushothamVadde/The-Analyzer.git
 
 - **Step2** \
-Navigate to directory that we cloned from git **Analyzer** and run the below command.
-
->pipenv run python Analyzer.py
+ down load the Analyzer.IPYNB file and run the jupiter notebook file
 
 
 
