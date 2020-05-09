@@ -24,7 +24,7 @@ In this function the we pass the Json_file as input file we read the json file d
 1.The data frame and the input list that we need to predict is passed as input arguments to the Text_Normalization function, we iterate through the **ingredients**  column in the dataframe and perform the text cleaning steps. \
 2. After cleaning the text we perform the word tokenization and add to  list_for_matrix. \
 3. The inputlist is also added to the list_for_matrix at the index0. \
-4. the function returns the list_for_matrix. \
+4. the function returns the list_for_matrix. 
 >list_for_matrix.insert(0,input_list)
 
 ### Vectorizer (Normalized_data):
@@ -62,8 +62,8 @@ The function returns the neighbors size.
 >>>        score = metrics.accuracy_score(Y_test, Y_prediction)
 >>>        score_list.append (score)
 >>>        print("Accuracy score  ", score, "% for K Neighbors-Value:", K_neighbors)
->>    Kneighbors = score_list.index(max(score_list))
->>    print("The number of neighbors with good accuracy score is :", Kneighbors+1 )
+>>    Kneighbors = score_list.index(max(score_list)) \
+>>    print("The number of neighbors with good accuracy score is :", Kneighbors+1 ) \
 >>    return Kneighbors
 
 
