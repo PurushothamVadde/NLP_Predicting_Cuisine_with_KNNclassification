@@ -5,9 +5,10 @@
 
 ### How did you turn your text into features and why?
 
-I used the TfidfVectorizer to convert the text into features.
-The Input_matrix contains the features for input ingredients.
-The new_matrix contains the features of input json file ingredients.
+I used the TfidfVectorizer to convert the text into features. \
+The Input_matrix contains the features for input ingredients. \ 
+The new_matrix contains the features of input json file ingredients. \
+To calcuate the distance between each vector in KNN model the text has to be converted into the numerical format.
 
 > def Vectorizer (Normalized_data): 
 >>    vectorizer = TfidfVectorizer(stop_words='english') \
