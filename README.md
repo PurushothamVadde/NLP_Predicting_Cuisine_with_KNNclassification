@@ -49,7 +49,7 @@ The matrix X is split into 70 and 30 percentage for train and test the model by 
 
 >    X_train, X_test, Y_train, Y_test = train_test_split(X, Y, train_size=0.7, test_size=0.3, random_state=100)
 
-Finding the Neighborsize: \ 
+- Finding the Neighborsize: 
 I used the KNeighborsClassifier model to predict the cuisine. \
 To find the optimal number of neighbors i iterate from 1 to 25 neighbors and find the accuracy for each neighbor size. \
 The accuracy for each neighbor size is added to the score_list, the score_list is sorted and find the neighborhood with high accuracy. \
@@ -67,10 +67,34 @@ The function returns the neighbors size.
 >>    return Kneighbors
 
 
+### KNN_Classification_Model(X,dataframe,Input_matrix,Kneighbors):
 
+In this method we preidct the type of cuisine and the nearest matching cuisines.
+1. The function takes matrix for ingredients from the  json file and stored into X.
+2. The Target variable is cuisine from the data frame is converted into numerical and stored into the Y variable.
+3. The X and Y data is split into 30 and 70 percentage to train and test the model.
+4. The KNeighborsClassifier model is used for the classification of cuisine based on the input ingredients.
+5. The Kneighbors find from the Finging_Kneighbors is passed to the model as tuning parameter.
+6. The model is trained with input ingredients data using fit function.
+7. The Input matrix is passed to the model to predict using predict function.
 
+> X_train, X_test, Y_train, Y_test = train_test_split(X, Y, train_size=0.7, test_size=0.3, random_state=100) \
+> KNN_model = KNeighborsClassifier(n_neighbors=Kneighbors, weights='uniform', algorithm="auto") \
+> KNN_model.fit(X_train, Y_train) \
+> Y_prediction = KNN_model.predict(Input_matrix)
 
+After predicting the cuisine to get the actual name of cuisine we use to label encoding package.
 
+>predicted_cuisine = LabelEncoder.inverse_transform(Y_prediction)
+
+To get the closest 5 cuisine recipes  we use the Cosine similarity function. \
+The cosine similarity function gives score for each cuisine with respect to the input ingredients matrix.
+> cosine_score = cosine_similarity(Input_matrix, X)
+
+The cosine scores are added to the data frame and sorted to get the higest scored cuisines.
+> dataframe['Cuisine_score'] = Cuisine_score
+> DataFrame = dataframe.sort_values(by ='Cuisine_score',ascending=False) \
+> Nearest_cuisine = DataFrame[['id', 'Cuisine_score']].head(Kneighbors)
 
 
 
