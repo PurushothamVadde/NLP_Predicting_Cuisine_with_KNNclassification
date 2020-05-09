@@ -145,8 +145,12 @@ The cosine scores are added to the data frame and sorted to get the higest score
 > DataFrame = dataframe.sort_values(by ='Cuisine_score',ascending=False) \
 > Nearest_cuisine = DataFrame[['id', 'Cuisine_score']].head(Kneighbors)
 
+## Predicted Output:
 
+- predicted_cuisine : ['vietnamese'] 
 
+- The closest 5 Recipie   
+- id  Cuisine_score   9944  (0.405543), 8498 (0.404329), 49233 (0.352452), 13474 (0.352272), 30333 (0.348394)
 
 
 ## Steps to Run project
