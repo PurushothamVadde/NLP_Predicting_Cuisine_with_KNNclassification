@@ -21,6 +21,7 @@ The new_matrix contains the features of input json file ingredients.
 
 - I used KNeighborsClassifier model to predict the cuisine, the KNeighborsClassifier model works by calculating the distance between each vector near to input_matrix vector. The optimal Kneighbors are find and passed as input argument to the model. 
 - The model is trained with matrix of ingredients text.
+- The KNeighborsClassifier works effectivelly for classification.
 
 > KNN_model = KNeighborsClassifier(n_neighbors=Kneighbors, weights='uniform', algorithm="auto") \
 > KNN_model.fit(X_train, Y_train) \
@@ -44,6 +45,8 @@ The function returns the neighbors size.
 >>    Kneighbors = score_list.index(max(score_list)) \
 >>    print("The number of neighbors with good accuracy score is :", Kneighbors+1 ) \
 >>    return Kneighbors
+
+The optimum best N value is **10**.
 
 ![N Value](https://github.com/PurushothamVadde/The-Analyzer/blob/master/Neighbor%20size.png)
 
