@@ -99,6 +99,21 @@ The cosine scores are added to the data frame and sorted to get the higest score
 
 
 
+## Steps to Run project
+
+- **Step1** \
+clone the project directory using below command 
+> git clone  https://github.com/PurushothamVadde/cs5293sp20-project2.git
+
+- **Step2** \
+Navigate to directory that we cloned from git **cs5293sp20-project2 / Summarizer** and run the below command.
+
+>pipenv run python summarizer.py
+
+- **Note**
+Need to download the dataset from below link and placed inside summarizer package before running the code
+
+https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge
 
 
 
