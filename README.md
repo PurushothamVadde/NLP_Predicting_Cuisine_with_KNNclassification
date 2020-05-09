@@ -46,7 +46,7 @@ The function returns the neighbors size.
 >>    print("The number of neighbors with good accuracy score is :", Kneighbors+1 ) \
 >>    return Kneighbors
 
-The optimum best N value is **10**.
+The optimum best N value is **13** with accuracy score  73.4 %.
 
 ![N Value](https://github.com/PurushothamVadde/The-Analyzer/blob/master/Neighbor%20size.png)
 
