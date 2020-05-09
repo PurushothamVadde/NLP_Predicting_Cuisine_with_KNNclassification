@@ -7,7 +7,8 @@
 - json
 - re
 - sklearn
-- pandas
+- pandas \
+
 In this project i am taking the text from json format file related to  **Yummly Food Cuisine** and performing the KNNClassification on the data to predict the type of cuisine.
 
 The projects have below files:
