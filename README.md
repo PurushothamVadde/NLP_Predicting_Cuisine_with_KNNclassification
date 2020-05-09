@@ -2,6 +2,53 @@
 
 ## Author: Purushotham Vadde
 
+
+### How did you turn your text into features and why?
+
+I used the TfidfVectorizer to convert the text into features.
+The Input_matrix contains the features for input ingredients.
+The new_matrix contains the features of input json file ingredients.
+
+> def Vectorizer (Normalized_data): 
+>>    vectorizer = TfidfVectorizer(stop_words='english') \
+>>    matrix = vectorizer.fit_transform(Normalized_data) \
+>>    Input_matrix = matrix[0] \
+>>    new_matrix = matrix[1:] \
+>>    return new_matrix,Input_matrix
+
+
+### What classifiers/clustering methods did you choose and why?
+
+- I used KNeighborsClassifier model to predict the cuisine, the KNeighborsClassifier model works by calculating the distance between each vector near to input_matrix vector. The optimal Kneighbors are find and passed as input argument to the model. 
+- The model is trained with matrix of ingredients text.
+
+> KNN_model = KNeighborsClassifier(n_neighbors=Kneighbors, weights='uniform', algorithm="auto") \
+> KNN_model.fit(X_train, Y_train) \
+> Y_prediction = KNN_model.predict(Input_matrix)
+
+
+### What N did you choose and why?
+
+- Finding the Neighborsize: 
+To find the optimal number of neighbors i iterate from 1 to 25 neighbors and find the accuracy for each neighbor size. \
+The accuracy for each neighbor size is added to the score_list, the score_list is sorted and find the neighborhood with high accuracy. \
+The function returns the neighbors size.
+> for neighbors in range(25):
+>>>        K_neighbors = neighbors + 1
+>>>        KNN_model = KNeighborsClassifier(n_neighbors=K_neighbors, weights='uniform', algorithm="auto")
+>>>        KNN_model.fit(X_train, Y_train)
+>>>        Y_prediction = KNN_model.predict(X_test)
+>>>        score = metrics.accuracy_score(Y_test, Y_prediction)
+>>>        score_list.append (score)
+>>>        print("Accuracy score  ", score, "% for K Neighbors-Value:", K_neighbors)
+>>    Kneighbors = score_list.index(max(score_list)) \
+>>    print("The number of neighbors with good accuracy score is :", Kneighbors+1 ) \
+>>    return Kneighbors
+
+![N Value](https://github.com/PurushothamVadde/The-Analyzer/blob/master/Neighbor%20size.png)
+
+
+
 ## Packages Required for Project:
 - nltk
 - json
