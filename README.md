@@ -1,4 +1,4 @@
-## Text Analytics project 2  "TheAnalyzer"
+## NLP_Predicting_Cuisine_with_KNNclassification
 
 ## Author: Purushotham Vadde
 
