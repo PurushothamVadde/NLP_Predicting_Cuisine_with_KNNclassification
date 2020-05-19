@@ -159,7 +159,7 @@ The cosine scores are added to the data frame and sorted to get the higest score
 
 - **Step1** \
 clone the project directory using below command 
-> git clone  https://github.com/PurushothamVadde/The-Analyzer.git
+> git clone  https://github.com/PurushothamVadde/NLP_Predicting_Cuisine_with_KNNclassification.git
 
 - **Step2** \
  down load the Analyzer.IPYNB file and run the jupiter notebook file
